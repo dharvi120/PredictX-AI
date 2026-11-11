@@ -1,0 +1,23 @@
+{
+    "total_engines": 100,
+    "priority_counts": {
+        "Medium": 81,
+        "High": 19
+    },
+    "sensor_health_status_counts": {
+        "Warning": 98,
+        "Healthy": 2
+    },
+    "uncertainty_level_counts": {
+        "High": 69,
+        "Medium": 31
+    },
+    "average_predicted_rul": 85.84940545634919,
+    "average_sensor_health": 82.81314383203245,
+    "average_interval_width": 174.79005476190477,
+    "decision_rules": {
+        "high": "Predicted RUL <= 30 OR sensor health < 65",
+        "medium": "Predicted RUL <= 60 OR sensor health < 85 OR interval width > 150",
+        "low": "None of the above conditions"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "best_model": "Random Forest",
+    "selection_metric": "MAE",
+    "validation_MAE": 23.519461916461914,
+    "validation_RMSE": 31.849790260485385,
+    "validation_R2": 0.7646476823610688,
+    "feature_count": 63,
+    "validation_method": "Engine-wise holdout"
+}

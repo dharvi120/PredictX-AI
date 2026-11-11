@@ -1,0 +1,13 @@
+{
+    "model": "Robust Random Forest",
+    "calibration_method": "Engine-level maximum absolute residual",
+    "target_coverage": 0.9,
+    "empirical_test_coverage": 0.99,
+    "covered_engines": 99,
+    "total_test_engines": 100,
+    "calibration_engine_count": 20,
+    "conformal_quantile": 103.71369444444446,
+    "mean_interval_width": 174.79005476190477,
+    "MAE": 21.777334107142856,
+    "RMSE": 30.34125089156845
+}

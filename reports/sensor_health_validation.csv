@@ -1,0 +1,5 @@
+sensor,actual_fault,detected_faults,correctly_detected,missing_rate,stuck_rate,outlier_rate,noise_ratio
+sensor_2,missing,missing,True,0.09795938151325675,0.008704997313272435,0.0001612036539494895,0.8735591584304029
+sensor_2,stuck,stuck,True,0.0,0.9999515292520964,0.0,0.0
+sensor_2,outlier,outlier,True,0.0,0.01628617129562309,0.09795938151325675,1.376236371019296
+sensor_2,noise,,False,0.0,0.0,0.0005331782269400417,1.3145672690363324

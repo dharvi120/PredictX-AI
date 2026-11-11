@@ -1,0 +1,27 @@
+﻿# Python environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Large trained model binaries
+models/*.pkl
+
+# Frontend dependencies and builds
+frontend/node_modules/
+frontend/dist/
+
+# Generated files
+.DS_Store
+Thumbs.db
+*.log
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/

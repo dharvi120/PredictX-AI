@@ -1,0 +1,12 @@
+{
+    "model": "Robust Random Forest",
+    "calibration_method": "Engine-level maximum absolute residual",
+    "calibration_engines": 20,
+    "target_coverage": 0.9,
+    "alpha": 0.1,
+    "conformal_quantile": 57.05066666666673,
+    "mean_interval_width": 103.92531755952393,
+    "minimum_interval_width": 61.80369047619054,
+    "maximum_interval_width": 114.10133333333347,
+    "test_engines": 100
+}

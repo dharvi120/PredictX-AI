@@ -1,0 +1,12 @@
+{
+    "input_file": "C:\\Users\\dhasu\\Desktop\\PredictX-AI\\data\\processed\\train_FD001_engineered.csv",
+    "training_rows": 16561,
+    "validation_rows": 4070,
+    "training_engines": 80,
+    "validation_engines": 20,
+    "feature_count": 63,
+    "target": "RUL",
+    "split_method": "Engine-wise",
+    "test_size": 0.2,
+    "random_state": 42
+}

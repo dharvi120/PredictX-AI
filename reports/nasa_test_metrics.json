@@ -1,0 +1,8 @@
+{
+    "dataset": "NASA C-MAPSS FD001 official test set",
+    "model": "Robust Random Forest",
+    "engine_count": 100,
+    "feature_count": 63,
+    "MAE": 21.777334107142853,
+    "RMSE": 30.34125089156845
+}
