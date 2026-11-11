@@ -105,3 +105,14 @@ python -m pytest tests/ -v
 ## Author
 
 AI/ML Engineering Portfolio Project
+
+## Application Preview
+
+### Fleet Command Center
+![PredictX AI Overview](frontend/public/images/screenshots/overview.png)
+
+### Fleet Intelligence
+![Fleet Monitoring](frontend/public/images/screenshots/fleet.png)
+
+### Engine-Level Analysis
+![Engine Analysis](frontend/public/images/screenshots/engine-analysis.png)
