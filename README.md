@@ -108,6 +108,32 @@ AI/ML Engineering Portfolio Project
 
 ## Application Preview
 
+## System Architecture
+
+```mermaid
+flowchart TD
+    A["NASA C-MAPSS Dataset<br/>FD001"] --> B["Data Preprocessing"]
+    B --> C["Feature Engineering<br/>Rolling Mean, Std, Diff"]
+    
+    C --> D["RUL Prediction Model<br/>Random Forest"]
+    C --> E["Sensor Reliability Analysis"]
+    
+    D --> F["Uncertainty Estimation<br/>Conformal Prediction"]
+    D --> G["SHAP Explainability"]
+    
+    E --> H["Sensor Health Assessment"]
+    F --> I["Maintenance Decision Support"]
+    G --> I
+    H --> I
+    
+    I --> J["FastAPI Backend"]
+    J --> K["React Dashboard"]
+    
+    K --> L["Fleet Monitoring"]
+    K --> M["Engine-Level Analysis"]
+    K --> N["Maintenance Prioritization"]
+```
+
 ### Fleet Command Center
 ![PredictX AI Overview](frontend/public/images/screenshots/overview.png)
 
