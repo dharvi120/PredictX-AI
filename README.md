@@ -142,3 +142,43 @@ flowchart TD
 
 ### Engine-Level Analysis
 ![Engine Analysis](frontend/public/images/screenshots/engine-analysis.png)
+ 
+
+
+## Robustness Evaluation
+
+PredictX AI evaluates model performance under different sensor corruption scenarios to understand how unreliable inputs affect Remaining Useful Life (RUL) predictions.
+
+### Experimental Scenarios
+
+- Clean sensor data
+- 10% missing sensor readings
+- 20% sensor noise
+- Dropout of two sensors
+
+### Baseline vs Robust Model
+
+Results below report mean MAE across five corruption seeds.
+
+| Scenario | Baseline MAE | Robust MAE |
+|---|---:|---:|
+| Clean | 21.4164 | 21.7773 |
+| Missing 10% | 21.8004 | 22.0201 |
+| Noise 20% | 21.3706 | 21.2029 |
+| Two-sensor dropout | 23.2965 | 22.0181 |
+
+### Key Observations
+
+- Robust training improved average MAE under two-sensor dropout by approximately 5.49%.
+- It also improved performance under 20% sensor noise.
+- The robust model showed slightly worse performance on clean data.
+- Missing-data performance was also slightly worse.
+
+These results indicate a trade-off between clean-data accuracy and robustness under certain sensor corruption scenarios.
+
+### Evaluation Limitations
+
+- Results are based on five corruption seeds.
+- Experiments use the NASA C-MAPSS FD001 subset.
+- Results should not be interpreted as proof of generalization to real industrial machinery.
+- Further evaluation on independent datasets and operating conditions is required.
