@@ -182,3 +182,127 @@ These results indicate a trade-off between clean-data accuracy and robustness un
 - Experiments use the NASA C-MAPSS FD001 subset.
 - Results should not be interpreted as proof of generalization to real industrial machinery.
 - Further evaluation on independent datasets and operating conditions is required.
+
+## Uncertainty Estimation
+
+PredictX AI uses conformal prediction to estimate prediction intervals around Remaining Useful Life (RUL) predictions.
+
+Instead of presenting only a point estimate, the system provides:
+
+- Predicted Remaining Useful Life
+- Lower prediction bound
+- Upper prediction bound
+- Prediction interval width
+- Empirical coverage evaluation
+
+### Exploratory Evaluation
+
+| Metric | Result |
+|---|---:|
+| Target coverage | 90% |
+| Observed coverage | 99% (99/100 engines) |
+| Calibration quantile | 103.7137 cycles |
+| Mean interval width | 174.79 cycles |
+| MAE | 21.78 cycles |
+| RMSE | 30.34 cycles |
+
+### Interpretation
+
+The prediction interval communicates a range of plausible RUL values rather than presenting the point prediction as perfectly certain.
+
+Wider intervals indicate greater uncertainty, while narrower intervals indicate more concentrated predictions.
+
+### Important Statistical Limitation
+
+These results are exploratory. The calibration and model-selection process was not fully independent, so the observed 99% coverage must not be interpreted as a formal 90% conformal coverage guarantee.
+
+A dedicated independent calibration and evaluation split is required to establish a defensible coverage guarantee under the appropriate assumptions.
+
+## Explainability and Sensor Reliability
+
+### SHAP-Based Explainability
+
+PredictX AI uses SHAP (SHapley Additive exPlanations) to understand the contribution of input features to model predictions.
+
+Global feature importance identifies features with the highest average absolute SHAP values.
+
+Top contributing features in the saved analysis:
+
+| Feature | Mean Absolute SHAP |
+|---|---:|
+| cycle | 42.62 |
+| sensor_11_rolling_mean | 8.33 |
+| sensor_4_rolling_mean | 5.50 |
+
+The project also generates:
+- SHAP summary plots
+- SHAP feature importance plots
+- SHAP waterfall visualizations
+- Local feature contribution reports
+
+Note: The saved local explanation is a sample explanation and is not linked to a specific engine ID.
+
+### Sensor Reliability Assessment
+
+The system evaluates sensor data quality using rule-based indicators:
+
+- Missing reading rate
+- Stuck reading rate
+- Outlier rate
+- Noise ratio
+- Overall sensor health score
+
+The analysis covers 21 sensors across 100 test engines.
+
+Sensor health status is used as an additional signal in maintenance decision support.
+
+### Limitations
+
+- Sensor health scores are rule-based indicators, not calibrated probabilities of physical sensor failure.
+- SHAP describes model feature contributions; it does not establish causality.
+- Feature importance can vary across datasets and operating conditions.
+
+
+## Maintenance Decision Support
+
+PredictX AI combines RUL predictions, uncertainty estimates and sensor health indicators to generate prototype maintenance priorities.
+
+### Decision Inputs
+
+- Predicted Remaining Useful Life
+- Prediction interval width
+- Average sensor health score
+- Number of unhealthy sensors
+- Sensor health status
+
+### Prototype Priority Rules
+
+| Priority | Conditions |
+|---|---|
+| High | Predicted RUL <= 30 OR average sensor health < 65 |
+| Medium | Predicted RUL <= 60 OR average sensor health < 85 OR interval width > 150 |
+| Low | None of the above conditions |
+
+### Recommended Actions
+
+The system associates maintenance priorities with suggested actions, such as scheduling inspections and monitoring RUL trends.
+
+### Evaluation Snapshot
+
+The current evaluation report contains 100 engine records.
+
+| Maintenance Priority | Engines |
+|---|---:|
+| High | 19 |
+| Medium | 81 |
+| Low | 0 |
+
+### Prediction Trust
+
+Prediction trust is presented alongside maintenance priority to communicate when a prediction should be interpreted cautiously.
+
+### Important Limitations
+
+- These thresholds are prototype rules, not validated industrial maintenance policies.
+- Priority levels are decision-support indicators, not automatic maintenance orders.
+- True RUL is used for offline evaluation only; it is not available as an operational input when predicting an engine's future RUL.
