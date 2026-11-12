@@ -306,3 +306,68 @@ Prediction trust is presented alongside maintenance priority to communicate when
 - These thresholds are prototype rules, not validated industrial maintenance policies.
 - Priority levels are decision-support indicators, not automatic maintenance orders.
 - True RUL is used for offline evaluation only; it is not available as an operational input when predicting an engine's future RUL.
+
+## Installation and Reproducibility
+
+### Prerequisites
+
+- Python 3.13
+- Node.js 22 or compatible version
+- npm
+- Docker Desktop (optional)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/dharvi120/PredictX-AI.git
+cd PredictX-AI
+```
+
+### Install Backend Dependencies
+
+```bash
+python -m venv .venv
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+### Model Artifacts
+
+Trained model binaries are excluded from this repository because of their size.
+
+The prediction backend requires the corresponding trained model artifacts in the expected local model directory.
+
+A fresh clone must obtain or generate these artifacts before running model-dependent endpoints.
+
+### Start the Backend
+
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+### Install and Start the Frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm ci
+npm run dev
+```
+
+### Run with Docker
+
+```bash
+docker compose up -d --build
+```
+
+### Run Tests
+
+```bash
+python -m pytest tests/ -v
+```
