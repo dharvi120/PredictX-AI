@@ -135,14 +135,17 @@ flowchart TD
 ```
 
 ### Fleet Command Center
-![PredictX AI Overview](frontend/public/images/screenshots/overview.png)
+<img width="1349" height="640" alt="fleet" src="https://github.com/user-attachments/assets/c9cb8db9-d331-406f-a1e5-1f386f0d27da" />
 
-### Fleet Intelligence
-![Fleet Monitoring](frontend/public/images/screenshots/fleet.png)
+
+### Overview
+<img width="1346" height="635" alt="front" src="https://github.com/user-attachments/assets/3ea38606-90fa-4def-bb98-4757bc1fbcc5" />
+
 
 ### Engine-Level Analysis
-![Engine Analysis](frontend/public/images/screenshots/engine-analysis.png)
- 
+
+ <img width="1364" height="643" alt="image" src="https://github.com/user-attachments/assets/6d5a499d-8e47-48f7-941b-01a3913d00ae" />
+
 
 
 ## Robustness Evaluation
